@@ -1,0 +1,13 @@
+<mat-paginator #paginator [length]="totalElements"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              (page)="onPageChanged($event)"
+              *ngIf="jeopardies">
+</mat-paginator>
+<mat-list role="list" >
+    <div *ngFor="let jeopardy of jeopardies">
+        <mat-list-item role="listitem"><app-jeopardy-item [jeopardy]="jeopardy"></app-jeopardy-item></mat-list-item>
+        <mat-divider></mat-divider>
+    </div>
+  </mat-list>
+  
